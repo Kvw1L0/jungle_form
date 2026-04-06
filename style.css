@@ -5,7 +5,8 @@
 }
 
 body {
-    background: url('fondo.jpg') no-repeat center center fixed;
+    /* Cambiamos fondo.jpg por fondo.png */
+    background: url('fondo.png') no-repeat center center fixed;
     background-size: cover;
     color: white;
     font-family: 'Arial Black', sans-serif;
