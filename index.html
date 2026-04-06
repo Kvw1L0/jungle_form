@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Jungle | Reclutamiento Monitores</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="overlay"></div>
+    
+    <main class="batiphone-container">
+        <header>
+            <img src="logo.png" alt="Jungle Logo" class="logo">
+            <div class="progress-bar"><div class="fill" id="progress"></div></div>
+        </header>
+
+        <form id="jungle-form">
+            <div class="step" id="step-1">
+                <h2>DATOS BASE</h2>
+                <div class="field">
+                    <label>Nombre</label>
+                    <input type="text" name="nombre" required placeholder="Nombre completo">
+                </div>
+                <div class="field">
+                    <label>Edad</label>
+                    <input type="number" name="edad" required>
+                </div>
+                <div class="field">
+                    <label>Comuna</label>
+                    <select name="comuna" required>
+                        <option value="" disabled selected>Selecciona tu comuna</option>
+                        <option value="Santiago">Santiago</option>
+                        <option value="Providencia">Providencia</option>
+                        <option value="Las Condes">Las Condes</option>
+                        <option value="Ñuñoa">Ñuñoa</option>
+                        <option value="Maipú">Maipú</option>
+                        <option value="Puente Alto">Puente Alto</option>
+                        <option value="La Florida">La Florida</option>
+                        <option value="Vitacura">Vitacura</option>
+                        <option value="Lo Barnechea">Lo Barnechea</option>
+                        <option value="Peñalolén">Peñalolén</option>
+                        <option value="San Miguel">San Miguel</option>
+                        <option value="Estación Central">Estación Central</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label>Instagram</label>
+                    <input type="text" name="instagram" placeholder="@usuario">
+                </div>
+                <button type="button" class="btn-primary" onclick="goToStep(2)">CONTINUAR</button>
+            </div>
+
+            <div class="step hidden" id="step-2">
+                <h2>PERFIL JUNGLE</h2>
+                
+                <div class="field">
+                    <label>¿Qué tan extrovertido eres?</label>
+                    <div class="range-container">
+                        <span>Poco</span>
+                        <input type="range" name="extroversion" min="1" max="10" value="5">
+                        <span>Muy</span>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label>Experiencia en activaciones</label>
+                    <select name="experiencia" required>
+                        <option value="No">No tengo experiencia</option>
+                        <option value="Animador">Animador</option>
+                        <option value="Anfitrion">Anfitrión/a</option>
+                        <option value="Monitor">Monitor</option>
+                        <option value="Productor">Productor</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label>¿Tienes licencia de conducir?</label>
+                    <select name="licencia" required>
+                        <option value="No">No</option>
+                        <option value="Si">Sí</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label>Dibújate bajo la lluvia</label>
+                    <div class="canvas-area">
+                        <canvas id="canvas-dibujo"></canvas>
+                        <button type="button" class="btn-clear" id="clear-btn">Borrar</button>
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button type="button" class="btn-secondary" onclick="goToStep(1)">ATRÁS</button>
+                    <button type="submit" class="btn-primary" id="submit-btn">ENVIAR A LA TRIBU</button>
+                </div>
+            </div>
+        </form>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>
