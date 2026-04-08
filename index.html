@@ -3,63 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Jungle | Reclutamiento Monitores</title>
+    <title>Jungle Tribu | Reclutamiento</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="overlay"></div>
+    <div class="background-overlay"></div>
     
     <main class="batiphone-container">
         <header>
             <img src="logo.png" alt="Jungle Logo" class="logo">
-            <div class="progress-bar"><div class="fill" id="progress"></div></div>
+            <div class="progress-bar"><div class="fill" id="progress-fill"></div></div>
         </header>
 
         <form id="jungle-form">
-            <div class="step" id="step-1">
-                <h2>DATOS BASE</h2>
+            
+            <div class="step active" id="step-1">
+                <h2>01. DATOS BASE</h2>
                 <div class="field">
-                    <label>Nombre</label>
-                    <input type="text" name="nombre" required placeholder="Nombre completo">
+                    <label>Nombre Completo</label>
+                    <input type="text" name="nombre" required placeholder="Ej. Juan Pérez">
                 </div>
                 <div class="field">
                     <label>Edad</label>
-                    <input type="number" name="edad" required>
+                    <input type="number" name="edad" required placeholder="Ej. 25">
                 </div>
                 <div class="field">
-                    <label>Comuna</label>
+                    <label>Comuna (Región Metropolitana)</label>
                     <select name="comuna" required>
                         <option value="" disabled selected>Selecciona tu comuna</option>
-                        <option value="Santiago">Santiago</option>
-                        <option value="Providencia">Providencia</option>
-                        <option value="Las Condes">Las Condes</option>
-                        <option value="Ñuñoa">Ñuñoa</option>
-                        <option value="Maipú">Maipú</option>
-                        <option value="Puente Alto">Puente Alto</option>
-                        <option value="La Florida">La Florida</option>
-                        <option value="Vitacura">Vitacura</option>
-                        <option value="Lo Barnechea">Lo Barnechea</option>
-                        <option value="Peñalolén">Peñalolén</option>
-                        <option value="San Miguel">San Miguel</option>
-                        <option value="Estación Central">Estación Central</option>
+                        <optgroup label="Santiago Centro">
+                            <option value="Santiago">Santiago</option>
+                        </optgroup>
+                        <optgroup label="Cordillera">
+                            <option value="Puente Alto">Puente Alto</option>
+                            <option value="Pirque">Pirque</option>
+                            <option value="San José de Maipo">San José de Maipo</option>
+                        </optgroup>
+                        <optgroup label="Chacabuco">
+                            <option value="Colina">Colina</option>
+                            <option value="Lampa">Lampa</option>
+                            <option value="Tiltil">Tiltil</option>
+                        </optgroup>
+                        <optgroup label="Maipo">
+                            <option value="San Bernardo">San Bernardo</option>
+                            <option value="Buin">Buin</option>
+                            <option value="Calera de Tango">Calera de Tango</option>
+                            <option value="Paine">Paine</option>
+                        </optgroup>
+                        <optgroup label="Melipilla">
+                            <option value="Melipilla">Melipilla</option>
+                            <option value="Alhué">Alhué</option>
+                            <option value="Curacaví">Curacaví</option>
+                            <option value="María Pinto">María Pinto</option>
+                            <option value="San Pedro">San Pedro</option>
+                        </optgroup>
+                        <optgroup label="Talagante">
+                            <option value="Talagante">Talagante</option>
+                            <option value="El Monte">El Monte</option>
+                            <option value="Isla de Maipo">Isla de Maipo</option>
+                            <option value="Padre Hurtado">Padre Hurtado</option>
+                            <option value="Peñaflor">Peñaflor</option>
+                        </optgroup>
+                        <optgroup label="Santiago Resto">
+                            <option value="Cerrillos">Cerrillos</option>
+                            <option value="Cerro Navia">Cerro Navia</option>
+                            <option value="Conchalí">Conchalí</option>
+                            <option value="El Bosque">El Bosque</option>
+                            <option value="Estación Central">Estación Central</option>
+                            <option value="Huechuraba">Huechuraba</option>
+                            <option value="Independencia">Independencia</option>
+                            <option value="La Cisterna">La Cisterna</option>
+                            <option value="La Florida">La Florida</option>
+                            <option value="La Granja">La Granja</option>
+                            <option value="La Pintana">La Pintana</option>
+                            <option value="La Reina">La Reina</option>
+                            <option value="Las Condes">Las Condes</option>
+                            <option value="Lo Barnechea">Lo Barnechea</option>
+                            <option value="Lo Espejo">Lo Espejo</option>
+                            <option value="Lo Prado">Lo Prado</option>
+                            <option value="Macul">Macul</option>
+                            <option value="Maipú">Maipú</option>
+                            <option value="Ñuñoa">Ñuñoa</option>
+                            <option value="Pedro Aguirre Cerda">Pedro Aguirre Cerda</option>
+                            <option value="Peñalolén">Peñalolén</option>
+                            <option value="Providencia">Providencia</option>
+                            <option value="Pudahuel">Pudahuel</option>
+                            <option value="Quilicura">Quilicura</option>
+                            <option value="Quinta Normal">Quinta Normal</option>
+                            <option value="Recoleta">Recoleta</option>
+                            <option value="Renca">Renca</option>
+                            <option value="San Joaquín">San Joaquín</option>
+                            <option value="San Miguel">San Miguel</option>
+                            <option value="San Ramón">San Ramón</option>
+                            <option value="Vitacura">Vitacura</option>
+                        </optgroup>
                     </select>
                 </div>
                 <div class="field">
                     <label>Instagram</label>
                     <input type="text" name="instagram" placeholder="@usuario">
                 </div>
-                <button type="button" class="btn-primary" onclick="goToStep(2)">CONTINUAR</button>
+                <button type="button" class="btn-primary sinuous-button" onclick="goToStep(2)">CONTINUAR</button>
             </div>
 
             <div class="step hidden" id="step-2">
-                <h2>PERFIL JUNGLE</h2>
+                <h2>02. PERFIL</h2>
                 
                 <div class="field">
-                    <label>¿Qué tan extrovertido eres?</label>
-                    <div class="range-container">
-                        <span>Poco</span>
-                        <input type="range" name="extroversion" min="1" max="10" value="5">
-                        <span>Muy</span>
+                    <label>¿Te consideras una persona introvertida?</label>
+                    <div class="slider-wrapper">
+                        <span class="slider-label">Poco extrovertido</span>
+                        <input type="range" name="extroversion" min="1" max="10" value="5" class="slider">
+                        <span class="slider-label">Muy extrovertido</span>
                     </div>
                 </div>
 
@@ -83,18 +138,28 @@
                 </div>
 
                 <div class="field">
-                    <label>Dibújate bajo la lluvia</label>
-                    <div class="canvas-area">
-                        <canvas id="canvas-dibujo"></canvas>
-                        <button type="button" class="btn-clear" id="clear-btn">Borrar</button>
+                    <label>Dibújate bajo la lluvia (Trazos negros)</label>
+                    <div class="canvas-container">
+                        <canvas id="drawing-canvas"></canvas>
+                        <button type="button" class="btn-clear" id="clear-btn">BORRAR</button>
                     </div>
                 </div>
 
                 <div class="button-group">
                     <button type="button" class="btn-secondary" onclick="goToStep(1)">ATRÁS</button>
-                    <button type="submit" class="btn-primary" id="submit-btn">ENVIAR A LA TRIBU</button>
+                    <button type="submit" class="btn-primary" id="submit-btn">ENVIAR</button>
                 </div>
             </div>
+
+            <div class="step hidden" id="step-3">
+                <h2>PROCESANDO...</h2>
+                <p class="status-text">Analizando tu trazo...</p>
+                <div class="canvas-container final-animation-container">
+                    <canvas id="animation-canvas"></canvas>
+                </div>
+                <button type="button" class="btn-primary hidden" id="finish-btn" onclick="location.reload()">FINALIZAR</button>
+            </div>
+
         </form>
     </main>
 
