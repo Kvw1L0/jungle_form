@@ -7,14 +7,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <div class="field">
-    <label>¿Qué tan extrovertido te consideras?</label>
-    <div class="slider-container-jungle">
-        <input type="range" name="extroversion" min="1" max="10" value="5" class="slider" id="extro-slider">
-        <div id="slider-caption" class="slider-caption">Un poco extrovertido</div>
-    </div>
-</div>
     <div class="background-overlay"></div>
     
     <main class="batiphone-container">
@@ -114,15 +106,14 @@
                 <button type="button" class="btn-primary" onclick="goToStep(2)">CONTINUAR</button>
             </div>
 
-            <div class="step hidden" id="step-2">
+            <div class="step" id="step-2">
                 <h2>02. PERFIL</h2>
                 
                 <div class="field">
                     <label>¿Qué tan extrovertido te consideras?</label>
-                    <div class="slider-wrapper">
-                        <span class="slider-label">Poco</span>
-                        <input type="range" name="extroversion" min="1" max="10" value="5" class="slider">
-                        <span class="slider-label">Mucho</span>
+                    <div class="slider-container-jungle">
+                        <input type="range" name="extroversion" min="1" max="10" value="5" class="slider" id="extro-slider">
+                        <div id="slider-caption" class="slider-caption">Un poco extrovertido</div>
                     </div>
                 </div>
 
@@ -155,7 +146,7 @@
                         </div>
                         <div class="canvas-container">
                             <canvas id="drawing-canvas"></canvas>
-                            <button type="button" class="btn-clear" id="clear-btn">BORRAR TODO</button>
+                            <button type="button" class="btn-clear" id="clear-btn">BORRAR</button>
                         </div>
                     </div>
                 </div>
@@ -166,13 +157,13 @@
                 </div>
             </div>
 
-            <div class="step hidden" id="step-3">
+            <div class="step" id="step-3">
                 <h2>¡TRIBU JUNGLE!</h2>
                 <p class="status-text">Tu dibujo ha cobrado vida...</p>
                 <div class="canvas-container animation-container-jungle">
                     <canvas id="animation-canvas"></canvas>
                 </div>
-                <button type="button" class="btn-primary" id="finish-btn" onclick="location.reload()">FINALIZAR REGISTRO</button>
+                <button type="button" class="btn-primary" id="finish-btn" onclick="location.reload()" style="margin-top: 20px;">FINALIZAR REGISTRO</button>
             </div>
 
         </form>
