@@ -1,20 +1,16 @@
 // --- NAVEGACIÓN ENTRE PASOS ---
 function goToStep(step) {
-    // Ocultar todos los pasos quitando la clase 'active'
     document.querySelectorAll('.step').forEach(el => {
         el.classList.remove('active');
     });
     
-    // Mostrar solo el paso deseado
     document.getElementById(`step-${step}`).classList.add('active');
     
-    // Actualizar barra de progreso
     const fill = document.getElementById('progress-fill');
     if (step === 1) fill.style.width = '33%';
     if (step === 2) fill.style.width = '66%';
     if (step === 3) fill.style.width = '100%';
 
-    // Ajustar resolución del canvas si entramos al paso 2
     if (step === 2) {
         setTimeout(resizeDrawingCanvas, 100);
     }
@@ -44,7 +40,14 @@ const drawingCanvas = document.getElementById('drawing-canvas');
 const dCtx = drawingCanvas.getContext('2d');
 let drawing = false;
 let currentPart = 'head'; 
-const partConfigs = { head: { color: '#FFE000' }, body: { color: '#00E676' }, limbs: { color: '#FF3D00' } };
+
+// 3. COLORES DE LÁPIZ ACTUALIZADOS
+const partConfigs = { 
+    head: { color: '#FF9800' },   // Naranjo
+    body: { color: '#00E676' },   // Verde
+    limbs: { color: '#9C27B0' }   // Morado
+};
+
 let strokes = { head: [], body: [], limbs: [] };
 let currentStroke = [];
 
@@ -74,7 +77,13 @@ function startDrawing(e) {
     const pos = getPointerPos(e);
     dCtx.beginPath(); dCtx.moveTo(pos.x, pos.y);
     currentStroke.push(pos);
-    dCtx.lineWidth = 3; dCtx.lineCap = 'round'; dCtx.lineJoin = 'round'; dCtx.strokeStyle = '#000000'; 
+    
+    // El lápiz toma el color de la sección activa
+    dCtx.lineWidth = 3; 
+    dCtx.lineCap = 'round'; 
+    dCtx.lineJoin = 'round'; 
+    dCtx.strokeStyle = partConfigs[currentPart].color; 
+    
     if (e.type === 'touchstart') e.preventDefault();
 }
 
