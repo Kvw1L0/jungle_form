@@ -200,4 +200,32 @@ function drawPartStrokes(partStrokes, offsetX, offsetY) {
         }
         aCtx.stroke();
     });
+
+    // Lógica para el Slider de Extroversión
+const slider = document.getElementById('extro-slider');
+const caption = document.getElementById('slider-caption');
+
+const labels = {
+    1: "Introvertido",
+    2: "Introvertido",
+    3: "Un poco extrovertido",
+    4: "Un poco extrovertido",
+    5: "Un poco extrovertido",
+    6: "Extrovertido",
+    7: "Extrovertido",
+    8: "Extrovertido",
+    9: "Muy extrovertido",
+    10: "Muy extrovertido"
+};
+
+slider.oninput = function() {
+    // Actualiza el texto basado en el valor del 1 al 10
+    caption.innerText = labels[this.value];
+    
+    // Efecto visual opcional: Brillo cuando se mueve
+    caption.style.textShadow = `0 0 10px var(--yellow)`;
+    setTimeout(() => {
+        caption.style.textShadow = "none";
+    }, 100);
+};
 }
