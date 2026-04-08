@@ -34,15 +34,15 @@
                         <optgroup label="Santiago Centro">
                             <option value="Santiago">Santiago</option>
                         </optgroup>
-                        <optgroup label="Cordillera">
-                            <option value="Puente Alto">Puente Alto</option>
-                            <option value="Pirque">Pirque</option>
-                            <option value="San José de Maipo">San José de Maipo</option>
-                        </optgroup>
                         <optgroup label="Chacabuco">
                             <option value="Colina">Colina</option>
                             <option value="Lampa">Lampa</option>
                             <option value="Tiltil">Tiltil</option>
+                        </optgroup>
+                        <optgroup label="Cordillera">
+                            <option value="Puente Alto">Puente Alto</option>
+                            <option value="Pirque">Pirque</option>
+                            <option value="San José de Maipo">San José de Maipo</option>
                         </optgroup>
                         <optgroup label="Maipo">
                             <option value="San Bernardo">San Bernardo</option>
@@ -103,18 +103,18 @@
                     <label>Instagram</label>
                     <input type="text" name="instagram" placeholder="@usuario">
                 </div>
-                <button type="button" class="btn-primary sinuous-button" onclick="goToStep(2)">CONTINUAR</button>
+                <button type="button" class="btn-primary" onclick="goToStep(2)">CONTINUAR</button>
             </div>
 
             <div class="step hidden" id="step-2">
                 <h2>02. PERFIL</h2>
                 
                 <div class="field">
-                    <label>¿Te consideras una persona introvertida?</label>
+                    <label>¿Qué tan extrovertido te consideras?</label>
                     <div class="slider-wrapper">
-                        <span class="slider-label">Poco extrovertido</span>
+                        <span class="slider-label">Poco</span>
                         <input type="range" name="extroversion" min="1" max="10" value="5" class="slider">
-                        <span class="slider-label">Muy extrovertido</span>
+                        <span class="slider-label">Mucho</span>
                     </div>
                 </div>
 
@@ -138,10 +138,17 @@
                 </div>
 
                 <div class="field">
-                    <label>Dibújate bajo la lluvia (Trazos negros)</label>
-                    <div class="canvas-container">
-                        <canvas id="drawing-canvas"></canvas>
-                        <button type="button" class="btn-clear" id="clear-btn">BORRAR</button>
+                    <label>Dibújate bajo la lluvia (Dibuja por zonas)</label>
+                    <div class="drawing-module">
+                        <div class="part-selector" id="part-selector">
+                            <button type="button" class="part-btn active" data-part="head" style="--part-color: #FFE000">Cabeza</button>
+                            <button type="button" class="part-btn" data-part="body" style="--part-color: #00E676">Tronco</button>
+                            <button type="button" class="part-btn" data-part="limbs" style="--part-color: #FF3D00">Extremidades</button>
+                        </div>
+                        <div class="canvas-container">
+                            <canvas id="drawing-canvas"></canvas>
+                            <button type="button" class="btn-clear" id="clear-btn">BORRAR TODO</button>
+                        </div>
                     </div>
                 </div>
 
@@ -152,12 +159,12 @@
             </div>
 
             <div class="step hidden" id="step-3">
-                <h2>PROCESANDO...</h2>
-                <p class="status-text">Analizando tu trazo...</p>
-                <div class="canvas-container final-animation-container">
+                <h2>¡TRIBU JUNGLE!</h2>
+                <p class="status-text">Tu dibujo ha cobrado vida...</p>
+                <div class="canvas-container animation-container-jungle">
                     <canvas id="animation-canvas"></canvas>
                 </div>
-                <button type="button" class="btn-primary hidden" id="finish-btn" onclick="location.reload()">FINALIZAR</button>
+                <button type="button" class="btn-primary" id="finish-btn" onclick="location.reload()">FINALIZAR REGISTRO</button>
             </div>
 
         </form>
